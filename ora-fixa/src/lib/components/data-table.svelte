@@ -366,7 +366,6 @@
 					<button type="submit" class="all-unset">Marchează ca Neprezentat</button>
 				</form></DropdownMenu.Item
 			>
-			<DropdownMenu.Item>		<a href={`/client/${row.original.profiles.id}`}> Vezi Profilul Clientului </a> </DropdownMenu.Item>
 			<DropdownMenu.Separator />
 			<Dialog.Root bind:open={isDialogOpen}>
 				<Dialog.Trigger class="hover:bg-accent rounded-md p-2 text-start text-sm text-red-500"

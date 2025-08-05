@@ -376,9 +376,6 @@
 					status={row.original.status}
 				/>
 			</div>
-			<DropdownMenu.Item>
-						<a href={`/client/${row.original.profiles.id}`}> Vezi Profilul Clientului </a>
-			</DropdownMenu.Item>
 		</DropdownMenu.Content>
 	</DropdownMenu.Root>
 {/snippet}

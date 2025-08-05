@@ -41,6 +41,10 @@ export const actions: Actions = {
 			throw redirect(303, '/cont/completeaza-profilul');
 		}
 
+		if(profile?.is_banned){
+			return message(form, 'Contul tau a fost blocat!')
+		}
+
 		const startTime = new Date(`${form.data.date.split('T')[0]}T${form.data.time}:00.000Z`);
 		const endTime = new Date(startTime.getTime() + form.data.duration * 60 * 1000);
 

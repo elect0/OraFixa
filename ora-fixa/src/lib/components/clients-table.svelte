@@ -31,6 +31,7 @@
 	import * as Table from '$lib/components/ui/table/index.js';
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
 	import * as Select from '$lib/components/ui/select/index.js';
+	import * as Dialog from '$lib/components/ui/dialog/index.js'
 	import Button from './ui/button/button.svelte';
 	import { EllipsisVertical } from 'lucide-svelte';
 	import WalkInModal from './walk-in-modal.svelte';
@@ -38,8 +39,7 @@
 	import { page } from '$app/state';
 	import { goto } from '$app/navigation';
 	import Input from './ui/input/input.svelte';
-
-	console.log(ClientSchema, 'EEE');
+	import BlockClientModal from './block-client-modal.svelte';
 
 	let {
 		clients,
@@ -266,7 +266,7 @@
 </div>
 <div class="flex w-full items-center justify-between p-3">
 	<div class="flex flex-col">
-		<span class="mt-4 text-start text-sm text-stone-500"
+		<span class="text-start text-sm text-stone-500"
 			>{table.getFilteredRowModel().rows.length} din {clientsCount}
 			clienți.
 		</span>
@@ -308,9 +308,7 @@
 			{/snippet}
 		</DropdownMenu.Trigger>
 		<DropdownMenu.Content align="end" class="w-32">
-			<DropdownMenu.Item>
-				<a href={`/client/${row.original.id}`}> Vezi Profilul Clientului </a>
-			</DropdownMenu.Item>
+			<BlockClientModal {row} />
 			<DropdownMenu.Separator />
 			<WalkInModal {row} {services} />
 		</DropdownMenu.Content>

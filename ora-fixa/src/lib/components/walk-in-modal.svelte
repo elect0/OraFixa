@@ -60,7 +60,6 @@
 	);
 
 	let isOpen = $state(false);
-	let triggerRef = $state<HTMLButtonElement>(null!);
 	let contentRef = $state<HTMLElement | null>(null);
 
 	let availableSlots = $state<{ available_slot: string }[]>([]);
@@ -117,7 +116,7 @@
 			</Dialog.Description>
 		</Dialog.Header>
 		<form action="?/addWalkInAppointment" method="POST" use:enhance class="space-y-4">
-			<Label for="clientId">Client</Label>
+			<Label>Client</Label>
 			<Input value={row.original.full_name} disabled={true} />
 			<div class="space-y-4">
 				<Label class="mb-2">Serviciu</Label>
